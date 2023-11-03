@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="151dp"
+    android:layout_margin="16dp">
+
+    <ImageView
+        android:id="@+id/productImageView"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:contentDescription="@null"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/productNameTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/banner_sample_1" />
+
+    <Space
+        android:id="@+id/spaceImage"
+        android:layout_width="22dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/productNameTextView"
+        app:layout_constraintStart_toEndOf="@+id/productImageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#222831"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spaceImage"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Product name" />
+
+    <Space
+        android:id="@+id/spaceName"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/productNameTextView"
+        app:layout_constraintStart_toStartOf="@+id/productNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/productNameTextView" />
+
+    <TextView
+        android:id="@+id/productDescriptionTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ellipsize="end"
+        android:gravity="top"
+        android:lines="4"
+        android:textColor="#AAAAAD"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/spacePrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spaceImage"
+        app:layout_constraintTop_toBottomOf="@+id/spaceName"
+        tools:text="Product description Product description Product description Product description Product description Product description Product description Product description" />
+
+    <Space
+        android:id="@+id/spacePrice"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/priceCardView"
+        app:layout_constraintEnd_toEndOf="@+id/productDescriptionTextView"
+        app:layout_constraintStart_toStartOf="@+id/productDescriptionTextView" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/priceCardView"
+        android:layout_width="87dp"
+        android:layout_height="32dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="@color/price_stroke_color"
+        app:strokeWidth="2dp">
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/pink"
+            android:textSize="13sp"
+            tools:text="345" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

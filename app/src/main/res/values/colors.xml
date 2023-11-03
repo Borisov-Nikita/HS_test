@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="pink">#FD3A69</color>
+    <color name="pink_alfa_20">#33FD3A69</color>
+    <color name="gray_alfa_5">#16BEBEBE</color>
+    <color name="gray_alfa_10">#24BEBEBE</color>
+    <color name="gray_alfa_20">#33BEBEBE</color>
+    <color name="gray">#7B7B7B</color>
+
+    <color name="tab_unselected">#C3C4C9</color>
+    <color name="toolbar_city">#222831</color>
+    <color name="toolbar_city_icon">#323232</color>
+    <color name="toolbar_menu_icon">#2E2E33</color>
 </resources>
+

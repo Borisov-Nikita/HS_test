@@ -10,6 +10,7 @@ androidAppCompat = "1.6.1"
 androidGradle = "8.1.2"
 androidLifecycle = "2.6.2"
 androidConstraintLayout = "2.1.4"
+androidNavigationComponent = "2.7.4"
 googleMaterial = "1.10.0"
 googleHilt = "2.48.1"
 kotlin = "1.9.0"
@@ -35,6 +36,8 @@ android-appCompat = { module = "androidx.appcompat:appcompat", version.ref = "an
 android-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidLifecycle" }
 android-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidLifecycle" }
 android-ConstraintLayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidConstraintLayout" }
+android-NavigationFragments = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidNavigationComponent" }
+android-NavigationUI = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidNavigationComponent" }
 google-material = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "googleHilt" }
 google-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "googleHilt" }

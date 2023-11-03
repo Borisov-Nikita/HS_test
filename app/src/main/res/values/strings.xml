@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">HS test</string>
+    <string name="menu_tab">Menu</string>
+    <string name="profile_tab">Profile</string>
+    <string name="basket_tab">Basket</string>
+    <string name="qr_code_toolbar">QR code</string>
+
+    <string name="profile_description">Your profile information may be here</string>
+    <string name="your_basket_is_empty">Your basket is empty</string>
 </resources>

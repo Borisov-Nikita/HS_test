@@ -49,6 +49,10 @@ dependencies {
     implementation(libs.android.activity)
     implementation(libs.android.fragment)
 
+    //Navigation
+    implementation(libs.android.navigationFragments)
+    implementation(libs.android.navigationUI)
+
     //Coroutines
     implementation(libs.kotlin.coroutines.core)
 
