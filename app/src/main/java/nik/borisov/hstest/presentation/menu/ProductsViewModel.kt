@@ -1,24 +1,46 @@
 package nik.borisov.hstest.presentation.menu
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import nik.borisov.hstest.presentation.entities.ProductUi
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
+import nik.borisov.hstest.domain.Result
+import nik.borisov.hstest.domain.usecases.ProductProviderUseCase
 
-class ProductsViewModel : ViewModel() {
+class ProductsViewModel @AssistedInject constructor(
+    @Assisted private val categoryId: Int,
+    private val productProviderUseCase: ProductProviderUseCase
+) : ViewModel() {
 
-    private val _products = MutableLiveData<List<ProductUi>>()
-    val banners: LiveData<List<ProductUi>> = _products
+    val screenState =
+        productProviderUseCase.provideProductList(categoryId).map { result ->
+            when (result) {
+                is Result.Pending -> {
+                    ProductsFragmentState.Pending
+                }
 
-    init {
-        _products.value = prepareFakeProducts()
+                is Result.Error -> {
+                    ProductsFragmentState.Error(result.exception)
+                }
+
+                is Result.Success -> {
+                    ProductsFragmentState.Success(result.value)
+                }
+            }
+        }.asLiveData()
+
+    fun downloadProducts() {
+        viewModelScope.launch {
+            productProviderUseCase.updateProductList(categoryId)
+        }
     }
 
-    private fun prepareFakeProducts(bannersCount: Int = 20): List<ProductUi> {
-        return mutableListOf<ProductUi>().apply {
-            for (id in 1..bannersCount) {
-                add(id - 1, ProductUi(id))
-            }
-        }
+    @AssistedFactory
+    interface Factory {
+        fun create(categoryId: Int): ProductsViewModel
     }
 }

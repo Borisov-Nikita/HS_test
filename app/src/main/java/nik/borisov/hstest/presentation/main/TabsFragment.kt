@@ -5,9 +5,11 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import dagger.hilt.android.AndroidEntryPoint
 import nik.borisov.hstest.R
 import nik.borisov.hstest.databinding.FragmentTabsBinding
 
+@AndroidEntryPoint
 class TabsFragment : Fragment(R.layout.fragment_tabs) {
 
     private var _binding: FragmentTabsBinding? = null

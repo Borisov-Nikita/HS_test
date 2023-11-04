@@ -59,6 +59,7 @@ dependencies {
     //Lifecycle
     implementation(libs.android.lifecycle.runtime)
     implementation(libs.android.lifecycle.viewmodel)
+    implementation(libs.android.lifecycle.liveData)
 
     //Ui
     implementation(libs.android.constraintLayout)
@@ -68,4 +69,19 @@ dependencies {
     implementation(libs.google.hilt.android)
     kapt(libs.google.hilt.compiler)
     kapt(libs.kotlin.metadata)
+
+    //Retrofit
+    implementation(libs.okhttp3.okhttp)
+    implementation(libs.okhttp3.logging)
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.retrofit2.converterGson)
+
+    //Picasso
+    implementation(libs.picasso)
+
+    //Room
+    implementation(libs.android.room.room)
+    implementation(libs.android.room.runtime)
+    annotationProcessor(libs.android.room.compiler)
+    kapt(libs.android.room.compiler)
 }

@@ -7,4 +7,7 @@
 
     <string name="profile_description">Your profile information may be here</string>
     <string name="your_basket_is_empty">Your basket is empty</string>
+    <string name="price">from %1$d ₽</string>
+    <string name="error">Something went wrong. Please try again.</string>
+    <string name="try_again">Try again</string>
 </resources>
